@@ -16,7 +16,7 @@ jobs:
       - task: AzureCLI@2
         displayName: "Run Bicep Validate"
         env:
-          AGENT_JOBNAME: "BicepValidate"
+          JOB_STEPNAME: "BicepValidate"
           WORKSPACE_PATH: $(System.DefaultWorkingDirectory)
           RUN_ID: $(Build.BuildId)
         inputs:
@@ -28,7 +28,7 @@ jobs:
       - task: AzureCLI@2
         displayName: "Run Bicep Deploy"
         env:
-          AGENT_JOBNAME: "BicepDeploy"
+          JOB_STEPNAME: "BicepDeploy"
           WORKSPACE_PATH: $(System.DefaultWorkingDirectory)
           RUN_ID: $(Build.BuildId)
         inputs:
