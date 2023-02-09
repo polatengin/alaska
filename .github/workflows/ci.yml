@@ -3,3 +3,20 @@ name: "Main Workflow"
 on:
   workflow_dispatch:
 
+jobs:
+  Deploy:
+    name: "Deploy Environment"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.1.0
+
+      - name: Validate
+        env:
+          JOB_STEPNAME: "BicepValidate"
+          WORKSPACE_PATH: ${{ github.workspace }}
+          RUN_ID: ${{ github.sha }}
+        run: |
+          ./setup-azcli.sh
+          ./setup-terraform.sh ${{ inputs.terraformVersion }}
+        working-directory: scripts
+        shell: bash
