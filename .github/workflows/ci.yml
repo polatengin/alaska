@@ -15,6 +15,7 @@ jobs:
           JOB_STEPNAME: "BicepValidate"
           WORKSPACE_PATH: ${{ github.workspace }}
           RUN_ID: ${{ github.sha }}
+          LOCATION_NAME: "westus2"
         run: |
           echo ${JOB_STEPNAME}
         working-directory: scripts
@@ -25,6 +26,7 @@ jobs:
           JOB_STEPNAME: "BicepDeploy"
           WORKSPACE_PATH: ${{ github.workspace }}
           RUN_ID: ${{ github.sha }}
+          LOCATION_NAME: "westus2"
         run: |
           echo ${JOB_STEPNAME}
         working-directory: scripts
