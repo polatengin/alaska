@@ -19,5 +19,13 @@ jobs:
           echo ${JOB_STEPNAME}
         working-directory: scripts
         shell: bash
+
+      - name: Deploy
+        env:
+          JOB_STEPNAME: "BicepDeploy"
+          WORKSPACE_PATH: ${{ github.workspace }}
+          RUN_ID: ${{ github.sha }}
+        run: |
+          echo ${JOB_STEPNAME}
         working-directory: scripts
         shell: bash
