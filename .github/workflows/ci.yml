@@ -16,7 +16,8 @@ jobs:
           WORKSPACE_PATH: ${{ github.workspace }}
           RUN_ID: ${{ github.sha }}
         run: |
-          ./setup-azcli.sh
-          ./setup-terraform.sh ${{ inputs.terraformVersion }}
+          echo ${JOB_STEPNAME}
+        working-directory: scripts
+        shell: bash
         working-directory: scripts
         shell: bash
