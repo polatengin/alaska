@@ -6,5 +6,16 @@
     "ghcr.io/devcontainers/features/powershell:1": {},
     "ghcr.io/devcontainers-contrib/features/curl-apt-get:1": {}
   },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "DavidAnson.vscode-markdownlint",
+        "EditorConfig.EditorConfig",
+        "GitHub.copilot",
+        "ms-azuretools.vscode-bicep",
+        "ms-vscode.PowerShell"
+      ]
+    }
+  },
   "remoteUser": "root"
 }
