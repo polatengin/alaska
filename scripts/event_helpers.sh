@@ -1,1 +1,0 @@
-echo ${JOB_STEPNAME}
