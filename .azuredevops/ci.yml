@@ -14,6 +14,18 @@ jobs:
       - checkout: self
 
       - task: AzureCLI@2
+        displayName: "Run Bicep Validate"
+        env:
+          AGENT_JOBNAME: "BicepValidate"
+          WORKSPACE_PATH: $(System.DefaultWorkingDirectory)
+          RUN_ID: $(Build.BuildId)
+        inputs:
+          scriptType: bash
+          scriptLocation: scriptPath
+          workingDirectory: "$(System.DefaultWorkingDirectory)/scripts"
+          scriptPath: "$(System.DefaultWorkingDirectory)/scripts/bicep_validate.sh"
+
+      - task: AzureCLI@2
         displayName: "Run Bicep Deploy"
         env:
           AGENT_JOBNAME: "BicepDeploy"
