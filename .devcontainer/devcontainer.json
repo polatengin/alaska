@@ -1,5 +1,10 @@
 {
   "name": "Alaska Dev Environment",
   "image": "mcr.microsoft.com/devcontainers/base:bullseye",
+  "features": {
+    "ghcr.io/devcontainers/features/azure-cli:1": {},
+    "ghcr.io/devcontainers/features/powershell:1": {},
+    "ghcr.io/devcontainers-contrib/features/curl-apt-get:1": {}
+  },
   "remoteUser": "root"
 }
