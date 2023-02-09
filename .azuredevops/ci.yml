@@ -19,6 +19,7 @@ jobs:
           JOB_STEPNAME: "BicepValidate"
           WORKSPACE_PATH: $(System.DefaultWorkingDirectory)
           RUN_ID: $(Build.BuildId)
+          LOCATION_NAME: "westus2"
         inputs:
           scriptType: bash
           scriptLocation: scriptPath
@@ -31,6 +32,7 @@ jobs:
           JOB_STEPNAME: "BicepDeploy"
           WORKSPACE_PATH: $(System.DefaultWorkingDirectory)
           RUN_ID: $(Build.BuildId)
+          LOCATION_NAME: "westus2"
         inputs:
           scriptType: bash
           scriptLocation: scriptPath
